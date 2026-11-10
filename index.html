@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alejo Simos — Desarrollador Frontend y Backend</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#E8EDF2; --surface:#F6F8FA; --ink:#14213D; --muted:#4B5A73; --line:#C5CFDB; --accent:#2F44E8;
+  --k:#2F44E8; --s:#0E7C5A; --n:#B4540A;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1624; --surface:#161F32; --ink:#E6ECF5; --muted:#9AA8C0; --line:#2A3650; --accent:#7C8CFF;
+    --k:#8E9CFF; --s:#5FD3A6; --n:#F0A35E; color-scheme:dark;
+  }
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-weight:500}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;text-decoration:none}
+
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center;padding:3rem 0 5rem}
+h1{font:800 clamp(2.4rem,6vw,4.2rem)/1.02 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:0 0 1.25rem}
+.lead{color:var(--muted);max-width:30rem;margin:0 0 2rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.25rem;border-radius:6px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+.code{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.25rem 1.5rem;font:400 .95rem/1.75 "IBM Plex Mono",ui-monospace,monospace;overflow-x:auto;margin:0}
+.code .k{color:var(--k)}.code .s{color:var(--s)}.code .n{color:var(--n)}.code .c{color:var(--muted)}
+
+section{padding:4rem 0;border-top:1px solid var(--line)}
+h2{font:700 1.75rem/1.2 "Bricolage Grotesque",sans-serif;margin:0 0 2rem;letter-spacing:-.01em}
+.proj{display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid var(--line)}
+.proj:first-of-type{padding-top:0}
+.proj h3{font:700 1.25rem/1.3 "Bricolage Grotesque",sans-serif;margin:0 0 .35rem}
+.proj .stack{font:400 .875rem/1.5 "IBM Plex Mono",monospace;color:var(--muted);margin:0}
+.proj p{margin:0 0 .75rem}
+.proj a{color:var(--accent);font-weight:500}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem}
+.skills h3{font:700 1.05rem/1.3 "Bricolage Grotesque",sans-serif;margin:0 0 .5rem}
+.skills p{margin:0;color:var(--muted)}
+.about{max-width:42rem}
+.about p{margin:0 0 1rem}
+.contact a.big{font:700 clamp(1.5rem,4vw,2.4rem)/1.2 "Bricolage Grotesque",sans-serif;color:var(--accent);word-break:break-all}
+.links{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:2rem;padding-bottom:3rem}
+  .proj{grid-template-columns:1fr;gap:.5rem}
+  nav ul{gap:1rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.tag{display:inline-block;font:500 .875rem/1.4 "IBM Plex Sans",sans-serif;border:1px solid var(--line);background:var(--surface);padding:.3rem .75rem;border-radius:99px;margin-bottom:1.25rem}
+.tag i{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--s);margin-right:.5rem}
+.list{margin:0;padding-left:1.25rem;max-width:44rem}.list li{margin-bottom:.6rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:2.5rem}
+button.btn{background:none;color:var(--ink);font:inherit;font-weight:500;cursor:pointer}
+[hidden]{display:none!important}
+.team{color:var(--muted);margin:1.5rem 0 0;max-width:44rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Principal">
+    <a class="logo" href="#inicio">Alejo Simos</a>
+    <ul>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#sobre-mi">Perfil</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div>
+      <span class="tag"><i></i>Busco pasantía o trabajo fijo · Último cuatrimestre UTN</span>
+      <h1>Soluciones de software claras, confiables y entregadas en plazo.</h1>
+      <p class="lead">Soy Alejo Simos, desarrollador frontend y backend, estudiante del último cuatrimestre de la Tecnicatura Universitaria en Programación (UTN). Busco incorporarme a un equipo de desarrollo donde aportar compromiso, prolijidad y ganas de seguir creciendo.</p>
+      <div class="btns">
+        <a class="btn main" href="#proyectos">Ver proyectos</a>
+        <a class="btn" href="https://github.com/alesi753" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="#contacto">Contactarme</a>
+      </div>
+    </div>
+<pre class="code" aria-label="Resumen en código"><span class="k">const</span> alejo = {
+  nombre: <span class="s">“Alejo Simos”</span>,
+  rol: <span class="s">“Desarrollador Frontend y Backend”</span>,
+  formacion: <span class="s">“Tecnicatura en Programación, UTN”</span>,
+  estado: <span class="s">“Último cuatrimestre”</span>,
+  busco: <span class="s">“Primera experiencia laboral”</span>,
+  destacado: <span class="s">“Titanium Fitness”</span>,
+  disponible: <span class="n">true</span>,
+};</pre>
+  </header>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <article class="proj">
+      <div><h3>Titanium Fitness: sistema de gestión integral</h3><p class="stack">React · Node.js · Express · PostgreSQL</p></div>
+      <div><p>Aplicación web full stack para gestionar un gimnasio. Incluye autenticación con roles (socio, entrenador y administración), control de acceso en puerta por DNI o código, reservas en línea de clases con cupos limitados, gestión de membresías y paneles de reportes financieros y de afluencia.</p><p style="color:var(--muted);margin:0">Proyecto destacado</p></div>
+    </article>
+    <article class="proj">
+      <div><h3>E-commerce full stack</h3><p class="stack">JavaScript · Frontend · Backend · Base de datos · Docker Compose</p></div>
+      <div><p>Tienda online completa con frontend, backend y base de datos, orquestada con Docker Compose. Proyecto final de Programación III (grupo 20), desarrollado en equipo.</p><a href="https://github.com/alesi753/Proyecto-Final-Prog3-g20" target="_blank" rel="noopener">Ver código en GitHub</a></div>
+    </article>
+    <article class="proj">
+      <div><h3>Trabajos de Programación IV</h3><p class="stack">TypeScript · Node.js · Programación web</p></div>
+      <div><p>Serie de trabajos prácticos en equipo que abarcan servidor web, interfaz front-end y una aplicación en Node.js.</p><a href="https://github.com/alesi753/tp2-prograiv-2026" target="_blank" rel="noopener">Ver código en GitHub</a></div>
+    </article>
+    <article class="proj">
+      <div><h3>Trabajos de Base de Datos I</h3><p class="stack">Bases de datos · SQL</p></div>
+      <div><p>Trabajos de diseño y consulta de bases de datos.</p><a href="https://github.com/alesi753/Trabajos-Base-de-datos-I" target="_blank" rel="noopener">Ver código en GitHub</a></div>
+    </article>
+    <article class="proj">
+      <div><h3>Metodología y Sistemas</h3><p class="stack">Python · Análisis de sistemas</p></div>
+      <div><p>Trabajo grupal sobre metodologías de desarrollo y análisis de sistemas de información.</p><a href="https://github.com/alesi753/Metodologia-y-Sistemas-grupo11" target="_blank" rel="noopener">Ver código en GitHub</a></div>
+    </article>
+    <article class="proj">
+      <div><h3>4 Cafeteras</h3><p class="stack">Frontend · Backend · Trabajo en equipo</p></div>
+      <div><p>Aplicación web desarrollada en equipo, con el backend y el frontend en repositorios separados.</p><a href="https://github.com/daviddcardozo2006/4-cafeteras" target="_blank" rel="noopener">Código del backend</a> &nbsp; <a href="https://github.com/naimneman99/4-cafeteras-frontend" target="_blank" rel="noopener">Código del frontend</a></div>
+    </article>
+    <article class="proj">
+      <div><h3>Aplicación de cine</h3><p class="stack">Programación IV · Grupo 20</p></div>
+      <div><p>Trabajo práctico grupal de Programación IV: una aplicación para gestionar un cine, desarrollada en equipo.</p><a href="https://github.com/Ramaa019/tp2_cine_2026_G20" target="_blank" rel="noopener">Ver código en GitHub</a></div>
+    </article>
+  </section>
+
+  <section id="habilidades">
+    <h2>Habilidades técnicas</h2>
+    <div class="skills">
+      <div><h3>Lenguajes</h3><p>JavaScript, TypeScript, Python, C#, SQL</p></div>
+      <div><h3>Frontend</h3><p>React, HTML5, CSS3</p></div>
+      <div><h3>Backend</h3><p>Node.js, Express, Flask, APIs REST</p></div>
+      <div><h3>Bases de datos</h3><p>PostgreSQL, Sequelize ORM</p></div>
+      <div><h3>Herramientas</h3><p>Git, GitHub, Docker, Linux Mint, Windows, VS Code</p></div>
+      <div><h3>Idiomas</h3><p>Español nativo. Inglés técnico: lectura y comprensión de documentación.</p></div>
+    </div>
+  </section>
+
+  <section id="sobre-mi">
+    <h2>Perfil profesional</h2>
+    <div class="cols">
+      <div>
+        <p>Curso el último cuatrimestre de la Tecnicatura Universitaria en Programación en la UTN. Mi formación incluye Programación IV, Arquitectura y Sistemas Operativos, Bases de Datos, Metodología de Sistemas, Legislación y Práctica Profesional Supervisada.</p>
+        <p>Me destaco por la responsabilidad, el cumplimiento de plazos y la atención al detalle: me gusta revisar y pulir cada entrega para que sea clara y confiable.</p>
+        <h3 style="font:700 1.05rem 'Bricolage Grotesque',sans-serif;margin:1.5rem 0 .5rem">Qué puedo aportar</h3>
+        <ul class="list">
+          <li>Interpretación de soluciones definidas por el analista y su implementación.</li>
+          <li>Desarrollo y corrección de programas con tecnologías vigentes en el mercado.</li>
+          <li>Software que ayude a los usuarios a optimizar sus procesos.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font:700 1.05rem 'Bricolage Grotesque',sans-serif;margin:0 0 .5rem">Áreas de interés</h3>
+        <ul class="list">
+          <li>Aplicaciones empresariales y análisis de datos</li>
+          <li>Aplicaciones móviles</li>
+          <li>Seguridad informática</li>
+          <li>IoT y robótica</li>
+          <li>Plataformas educativas y aplicaciones médicas</li>
+          <li>Desarrollo de videojuegos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p style="max-width:40rem;margin:0 0 1.5rem">Busco una pasantía o un puesto fijo. Estoy disponible para trabajo <strong>remoto, híbrido o presencial</strong> en Bahía Blanca, Buenos Aires, Argentina.</p>
+    <a class="big" href="mailto:alejosimos05@gmail.com">alejosimos05@gmail.com</a>
+    <div class="links">
+      <a class="btn main" href="https://wa.me/5492915100053" target="_blank" rel="noopener">WhatsApp: 291 510-0053</a>
+      <a class="btn" href="CV_Alejo_Simos.pdf" download>Descargar CV</a>
+      <button class="btn" id="copiar" type="button">Copiar email</button>
+      <a class="btn" href="https://github.com/alesi753" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Alejo Simos</footer>
+</div>
+<script>
+document.getElementById('copiar').addEventListener('click',function(){
+  var b=this;
+  try{navigator.clipboard.writeText('alejosimos05@gmail.com').then(function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar email'},2000)},function(){b.textContent='Copialo a mano'})}
+  catch(e){b.textContent='Copialo a mano'}
+});
+</script>
+</body>
+</html>
