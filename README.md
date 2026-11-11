@@ -33,22 +33,10 @@ Actualmente busco una **pasantía o un puesto fijo**, con disponibilidad para tr
 - Tipografías de Google Fonts
 - Publicado con GitHub Pages
 
-## Estructura del repositorio
-
-```
-alesi753.github.io/
-├── index.html            # Página del portafolio
-├── CV_Alejo_Simos.pdf    # Currículum para descargar
-└── README.md             # Este archivo
-```
 
 ## Cómo verlo en tu computadora
 
-1. Descargá o cloná el repositorio:
-   ```bash
-   git clone https://github.com/alesi753/alesi753.github.io.git
-   ```
-2. Abrí el archivo `index.html` en el navegador.
+Abrí el archivo `index.html` en el navegador.
 
 ## Contacto
 
