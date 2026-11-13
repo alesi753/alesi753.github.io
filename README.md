@@ -2,7 +2,7 @@
 
 Portafolio personal de **Alejo Simos**, desarrollador Full Stack y estudiante del último cuatrimestre de la Tecnicatura Universitaria en Programación (UTN).
 
-**Sitio en línea:** https://alesi753.github.io
+**Link:** https://alesi753.github.io
 
 ## Sobre el proyecto
 
