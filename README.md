@@ -30,9 +30,14 @@ Actualmente busco una **pasantía o un puesto fijo**, con disponibilidad para tr
 - HTML5
 - CSS3
 - JavaScript
-- Tipografías de Google Fonts
-- Publicado con GitHub Pages
-
+- TypeScript
+- React (con Vite)
+- Node.js y Express
+- PostgreSQL (con Sequelize)
+- Autenticación con JWT (JSON Web Tokens)
+- Docker
+- Control de versiones con Git y GitHub
+- Despliegue en Vercel, Render y Neon.tech
 
 ## Cómo verlo en tu computadora
 
